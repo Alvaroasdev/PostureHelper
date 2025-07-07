@@ -1,0 +1,22 @@
+{
+  "name": "posture-helper-astro",
+  "version": "1.0.0",
+  "description": "A posture reminder application built with Astro.",
+  "main": "src/pages/index.astro",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [
+    "astro",
+    "posture",
+    "reminder"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "astro": "^2.0.0"
+  },
+  "devDependencies": {}
+}

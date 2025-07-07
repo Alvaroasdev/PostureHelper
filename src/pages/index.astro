@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Posture Helper | Improve Focus & Prevent Back Pain</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Take regular posture breaks with this simple timer app. Boost your focus, prevent back pain, and improve your health."
+    />
+    <meta
+      name="keywords"
+      content="posture timer, posture app, health breaks, posture reminder, back pain prevention"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (para compartir en redes sociales) -->
+    <meta
+      property="og:title"
+      content="Posture Helper | Improve Focus & Prevent Back Pain"
+    />
+    <meta
+      property="og:description"
+      content="Take regular posture breaks with this simple timer app. Boost your focus, prevent back pain, and improve your health."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/postura.png" />
+
+    <!-- Styles y favicon -->
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="icon" href="/postura.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/postura.png" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="main-content">
+        <header class="header" role="banner">
+          <div class="header-buttons" aria-hidden="true"></div>
+        </header>
+
+        <section class="welcome-section">
+          <h1 class="welcome-title">Take a moment</h1>
+          <p class="welcome-subtitle">Regular reminders for better posture</p>
+        </section>
+
+        <main class="timer-section" role="main">
+          <h2 class="sr-only">Timer controls</h2>
+
+          <div
+            class="mode-selector"
+            role="group"
+            aria-label="Select timer mode"
+          >
+            <button
+              class="mode-btn active"
+              data-time="20"
+              data-name="Focus"
+              aria-pressed="true">Focus (20m)</button
+            >
+            <button
+              class="mode-btn"
+              data-time="1"
+              data-name="Quick"
+              aria-pressed="false">Quick (1m)</button
+            >
+            <button
+              class="mode-btn"
+              data-time="45"
+              data-name="Deep"
+              aria-pressed="false">Deep (45m)</button
+            >
+          </div>
+
+          <div class="timer-container">
+            <div class="timer-display" aria-live="polite">
+              <div class="progress-ring" id="progress-ring" aria-hidden="true">
+                <div class="progress-inner"></div>
+              </div>
+              <div
+                class="time-display"
+                id="time-display"
+                aria-label="Time remaining"
+              >
+                20:00
+              </div>
+              <div class="session-info">
+                <div class="session-label">Sessions</div>
+                <div class="session-count" id="session-count">0</div>
+              </div>
+            </div>
+          </div>
+
+          <div role="group" aria-label="Timer controls">
+            <button
+              class="control-btn"
+              id="control-btn"
+              aria-label="Start timer">Start</button
+            >
+            <button id="reset-btn" aria-label="Reset timer">Reset</button>
+          </div>
+        </main>
+      </div>
+
+      <aside
+        class="sidebar"
+        role="complementary"
+        aria-label="Progress and focus input"
+      >
+        <section class="sidebar-section">
+          <h2 class="sidebar-title">Current focus</h2>
+
+          <input
+            type="text"
+            class="focus-input"
+            id="focus-input"
+            placeholder="What are you working on?"
+          />
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="sidebar-title">Today's progress</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number" id="focus-count">0</div>
+              <div class="stat-label">Focus</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="quick-count">0</div>
+              <div class="stat-label">Quick</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="deep-count">0</div>
+              <div class="stat-label">Deep</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="total-count">0</div>
+              <div class="stat-label">Total</div>
+            </div>
+          </div>
+          <div class="focus-history">
+            <h3 class="sidebar-title">Focus history</h3>
+            <ul
+              id="focus-history-list"
+              class="focus-list"
+              aria-label="List of completed focus sessions"
+            >
+            </ul>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <div
+      class="notification"
+      id="notification"
+      role="alertdialog"
+      aria-labelledby="notification-title"
+      aria-describedby="notification-desc"
+      aria-modal="true"
+    >
+      <div class="notification-icon" aria-hidden="true">🪑✅</div>
+      <h2 id="notification-title">Posture check</h2>
+      <p id="notification-desc">
+        Take a deep breath, roll your shoulders back, and adjust your posture.
+        Your body will thank you.
+      </p>
+      <button id="closeBtn" aria-label="Close notification">Continue</button>
+    </div>
+    <footer class="footer" role="contentinfo">
+      <p class="footer-text">
+        © 2025 Posture Helper. Made with ❤️ by Alvaroasdev.
+      </p>
+      <div class="footer-links">
+        <span>|</span>
+        <a
+          href="https://www.netlify.com/"
+          target="_blank"
+          rel="noopener noreferrer">Hosted on Netlify</a
+        >
+      </div>
+    </footer>
+
+    <script src="/src/scripts/timer.js"></script>
+  </body>
+</html>
