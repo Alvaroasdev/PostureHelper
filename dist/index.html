@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Posture Helper | Improve Focus & Prevent Back Pain</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="Take regular posture breaks with this simple timer app. Boost your focus, prevent back pain, and improve your health.">
+    <meta name="keywords" content="posture timer, posture app, health breaks, posture reminder, back pain prevention">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (para compartir en redes sociales) -->
+    <meta property="og:title" content="Posture Helper | Improve Focus & Prevent Back Pain">
+    <meta property="og:description" content="Take regular posture breaks with this simple timer app. Boost your focus, prevent back pain, and improve your health.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/postura.png">
+
+    <!-- Styles y favicon -->
+
+    <link rel="icon" href="/postura.png" type="image/png">
+    <link rel="apple-touch-icon" href="/postura.png">
+  <link rel="stylesheet" href="/_astro/index.b6295238.css" /><script type="module">let c=1200,u=20*60,a=!1,l,g="Focus";const s={Focus:0,Quick:0,Deep:0},n=t=>document.getElementById(t),x=n("time-display"),i=n("control-btn"),v=n("progress-ring"),y=n("notification"),L=n("session-count"),p=document.querySelectorAll(".mode-btn"),d=n("focus-input"),k=n("focus-history-list"),C=new Audio("/src/assets/sounds/ding.mp3"),E=n("closeBtn");C.volume=1;p.forEach(t=>{t.addEventListener("click",()=>{if(a)return;p.forEach(o=>o.classList.remove("active")),t.classList.add("active"),c=u=parseInt(t.dataset.time)*60,g=t.dataset.name,f(),m()})});function f(){const t=String(Math.floor(c/60)).padStart(2,"0"),e=String(c%60).padStart(2,"0");x.textContent=`${t}:${e}`;const o=(u-c)/u*360;v.style.background=`conic-gradient(rgb(0, 0, 0) ${o}deg, #f0f0f0 ${o}deg)`}function b(){const t=Object.values(s).reduce((e,o)=>e+o,0);L.textContent=t}function T(){n("focus-count").textContent=s.Focus,n("quick-count").textContent=s.Quick,n("deep-count").textContent=s.Deep,n("total-count").textContent=Object.values(s).reduce((t,e)=>t+e,0)}function m(){b(),T()}function I(){a?S():B()}function B(){a=!0,i.textContent="Pause",i.classList.add("pause"),l=setInterval(()=>{c--,f(),c<=0&&w()},1e3)}function S(){a=!1,i.textContent="Start",i.classList.remove("pause"),clearInterval(l)}function w(){a=!1,clearInterval(l),s[g]++,m(),D(),h()}function h(){const t=document.querySelector(".mode-btn.active");if(!t)return;c=u=parseInt(t.dataset.time)*60,i.textContent="Start",i.classList.remove("pause"),v.style.background="conic-gradient(#d4af8c 0deg, rgb(0, 0, 0) 0deg)",f()}function D(){y.classList.add("show"),C.play().catch(()=>{})}function $(){S(),Object.keys(s).forEach(t=>s[t]=0),m(),h()}function F(t){const e=document.createElement("li"),o=document.createTextNode("You focused on: "),r=document.createElement("span");r.style.fontWeight="bold",r.textContent=t,e.appendChild(o),e.appendChild(r),k.appendChild(e)}d.addEventListener("keydown",t=>{if(t.key==="Enter"){t.preventDefault();const e=d.value.trim();e&&(F(e),d.value="")}});i.addEventListener("click",I);n("reset-btn").addEventListener("click",$);E.addEventListener("click",()=>{y.classList.remove("show")});
+</script></head>
+
+  <body>
+    <div class="container">
+      <div class="main-content">
+        <header class="header" role="banner">
+          <div class="header-buttons" aria-hidden="true"></div>
+        </header>
+
+        <section class="welcome-section">
+          <h1 class="welcome-title">Take a moment</h1>
+          <p class="welcome-subtitle">Regular reminders for better posture</p>
+        </section>
+
+        <main class="timer-section" role="main">
+          <h2 class="sr-only">Timer controls</h2>
+
+          <div class="mode-selector" role="group" aria-label="Select timer mode">
+            <button class="mode-btn active" data-time="20" data-name="Focus" aria-pressed="true">Focus (20m)</button>
+            <button class="mode-btn" data-time="5" data-name="Quick" aria-pressed="false">Quick (5m)</button>
+            <button class="mode-btn" data-time="45" data-name="Deep" aria-pressed="false">Deep (45m)</button>
+          </div>
+
+          <div class="timer-container">
+            <div class="timer-display" aria-live="polite">
+              <div class="progress-ring" id="progress-ring" aria-hidden="true">
+                <div class="progress-inner"></div>
+              </div>
+              <div class="time-display" id="time-display" aria-label="Time remaining">
+                20:00
+              </div>
+              <div class="session-info">
+                <div class="session-label">Sessions</div>
+                <div class="session-count" id="session-count">0</div>
+              </div>
+            </div>
+          </div>
+
+          <div role="group" aria-label="Timer controls">
+            <button class="control-btn" id="control-btn" aria-label="Start timer">Start</button>
+            <button id="reset-btn" aria-label="Reset timer">Reset</button>
+          </div>
+        </main>
+      </div>
+
+      <aside class="sidebar" role="complementary" aria-label="Progress and focus input">
+        <section class="sidebar-section">
+          <h2 class="sidebar-title">Current focus</h2>
+
+          <input type="text" class="focus-input" id="focus-input" placeholder="What are you working on?">
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="sidebar-title">Today's progress</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number" id="focus-count">0</div>
+              <div class="stat-label">Focus</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="quick-count">0</div>
+              <div class="stat-label">Quick</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="deep-count">0</div>
+              <div class="stat-label">Deep</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="total-count">0</div>
+              <div class="stat-label">Total</div>
+            </div>
+          </div>
+          <div class="focus-history">
+            <h3 class="sidebar-title">Focus history</h3>
+            <ul id="focus-history-list" class="focus-list" aria-label="List of completed focus sessions">
+            </ul>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <div class="notification" id="notification" role="alertdialog" aria-labelledby="notification-title" aria-describedby="notification-desc" aria-modal="true">
+      <div class="notification-icon" aria-hidden="true">🪑✅</div>
+      <h2 id="notification-title">Posture check</h2>
+      <p id="notification-desc">
+        Take a deep breath, roll your shoulders back, and adjust your posture.
+        Your body will thank you.
+      </p>
+      <button id="closeBtn" aria-label="Close notification">Continue</button>
+    </div>
+    <footer class="footer" role="contentinfo">
+      <p class="footer-text">
+        © 2025 Posture Helper. Made with ❤️ by Alvaroasdev.
+      </p>
+      <div class="footer-links">
+        <span>|</span>
+        <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Hosted on Netlify</a>
+      </div>
+    </footer>
+
+    
+  </body>
+</html>

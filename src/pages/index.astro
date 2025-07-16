@@ -1,3 +1,7 @@
+---
+import '../styles/main.css';
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,7 +33,7 @@
     <meta property="og:image" content="/postura.png" />
 
     <!-- Styles y favicon -->
-    <link rel="stylesheet" href="/src/styles/main.css" />
+
     <link rel="icon" href="/postura.png" type="image/png" />
     <link rel="apple-touch-icon" href="/postura.png" />
   </head>
@@ -38,12 +42,24 @@
     <div class="container">
       <div class="main-content">
         <header class="header" role="banner">
-          <div class="header-buttons" aria-hidden="true"></div>
+          <div class="header-buttons">
+            <div class="theme-switch">
+              <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+                <span class="theme-icon">☀️</span>
+              </button>
+            </div>
+            <div class="language-switch">
+              <button id="language-toggle" class="language-btn" aria-label="Toggle language">
+                <span class="language-text">EN</span>
+                <span class="language-icon">🌐</span>
+              </button>
+            </div>
+          </div>
         </header>
 
         <section class="welcome-section">
-          <h1 class="welcome-title">Take a moment</h1>
-          <p class="welcome-subtitle">Regular reminders for better posture</p>
+          <h1 class="welcome-title" data-i18n="welcome.title">Take a moment</h1>
+          <p class="welcome-subtitle" data-i18n="welcome.subtitle">Regular reminders for better posture</p>
         </section>
 
         <main class="timer-section" role="main">
@@ -58,19 +74,22 @@
               class="mode-btn active"
               data-time="20"
               data-name="Focus"
-              aria-pressed="true">Focus (20m)</button
+              aria-pressed="true"
+              data-i18n="modes.focus">Focus (20m)</button
             >
             <button
               class="mode-btn"
-              data-time="1"
+              data-time="5"
               data-name="Quick"
-              aria-pressed="false">Quick (1m)</button
+              aria-pressed="false"
+              data-i18n="modes.quick">Quick (5m)</button
             >
             <button
               class="mode-btn"
               data-time="45"
               data-name="Deep"
-              aria-pressed="false">Deep (45m)</button
+              aria-pressed="false"
+              data-i18n="modes.deep">Deep (45m)</button
             >
           </div>
 
@@ -87,7 +106,7 @@
                 20:00
               </div>
               <div class="session-info">
-                <div class="session-label">Sessions</div>
+                <div class="session-label" data-i18n="timer.sessions">Sessions</div>
                 <div class="session-count" id="session-count">0</div>
               </div>
             </div>
@@ -97,9 +116,10 @@
             <button
               class="control-btn"
               id="control-btn"
-              aria-label="Start timer">Start</button
+              aria-label="Start timer"
+              data-i18n="controls.start">Start</button
             >
-            <button id="reset-btn" aria-label="Reset timer">Reset</button>
+            <button id="reset-btn" aria-label="Reset timer" data-i18n="controls.reset">Reset</button>
           </div>
         </main>
       </div>
@@ -110,38 +130,39 @@
         aria-label="Progress and focus input"
       >
         <section class="sidebar-section">
-          <h2 class="sidebar-title">Current focus</h2>
+          <h2 class="sidebar-title" data-i18n="sidebar.currentFocus">Current focus</h2>
 
           <input
             type="text"
             class="focus-input"
             id="focus-input"
+            data-i18n-placeholder="sidebar.focusPlaceholder"
             placeholder="What are you working on?"
           />
         </section>
 
         <section class="sidebar-section">
-          <h2 class="sidebar-title">Today's progress</h2>
+          <h2 class="sidebar-title" data-i18n="sidebar.progress">Today's progress</h2>
           <div class="stats-grid">
             <div class="stat-card">
               <div class="stat-number" id="focus-count">0</div>
-              <div class="stat-label">Focus</div>
+              <div class="stat-label" data-i18n="stats.focus">Focus</div>
             </div>
             <div class="stat-card">
               <div class="stat-number" id="quick-count">0</div>
-              <div class="stat-label">Quick</div>
+              <div class="stat-label" data-i18n="stats.quick">Quick</div>
             </div>
             <div class="stat-card">
               <div class="stat-number" id="deep-count">0</div>
-              <div class="stat-label">Deep</div>
+              <div class="stat-label" data-i18n="stats.deep">Deep</div>
             </div>
             <div class="stat-card">
               <div class="stat-number" id="total-count">0</div>
-              <div class="stat-label">Total</div>
+              <div class="stat-label" data-i18n="stats.total">Total</div>
             </div>
           </div>
           <div class="focus-history">
-            <h3 class="sidebar-title">Focus history</h3>
+            <h3 class="sidebar-title" data-i18n="sidebar.history">Focus history</h3>
             <ul
               id="focus-history-list"
               class="focus-list"
@@ -162,12 +183,12 @@
       aria-modal="true"
     >
       <div class="notification-icon" aria-hidden="true">🪑✅</div>
-      <h2 id="notification-title">Posture check</h2>
-      <p id="notification-desc">
+      <h2 id="notification-title" data-i18n="notification.title">Posture check</h2>
+      <p id="notification-desc" data-i18n="notification.description">
         Take a deep breath, roll your shoulders back, and adjust your posture.
         Your body will thank you.
       </p>
-      <button id="closeBtn" aria-label="Close notification">Continue</button>
+      <button id="closeBtn" aria-label="Close notification" data-i18n="notification.continue">Continue</button>
     </div>
     <footer class="footer" role="contentinfo">
       <p class="footer-text">
