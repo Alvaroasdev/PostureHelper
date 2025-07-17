@@ -2,8 +2,8 @@
 
 Una aplicación minimalista de recordatorios de postura construida con **Astro**, **JavaScript** y **CSS**. Diseñada para ayudarte a mantener una mejor postura durante tus sesiones de trabajo.
 
-![Posture Helper - Light Theme](./pomo-white.webp)
-![Posture Helper - Dark Theme](./pomo-black.webp)
+![Posture Helper - Light Theme](/public/pomo-white.webp)
+![Posture Helper - Dark Theme](/public/pomo-black.webp)
 
 ## ✨ Características
 
