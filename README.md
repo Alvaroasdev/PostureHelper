@@ -2,8 +2,8 @@
 
 Una aplicación minimalista de recordatorios de postura construida con **Astro**, **JavaScript** y **CSS**. Diseñada para ayudarte a mantener una mejor postura durante tus sesiones de trabajo.
 
-![Posture Helper - Light Theme](public/pomo-white.png)
-![Posture Helper - Dark Theme](public/pomo-black.png)
+![Posture Helper - Light Theme](./pomo-white.webp)
+![Posture Helper - Dark Theme](./pomo-black.webp)
 
 ## ✨ Características
 
@@ -85,8 +85,8 @@ Una aplicación minimalista de recordatorios de postura construida con **Astro**
 ```
 posture-helper-astro/
 ├── public/
-│   ├── pomo-white.png      # Captura de pantalla tema claro
-│   ├── pomo-black.png      # Captura de pantalla tema oscuro
+│   ├── pomo-white.webp     # Captura de pantalla tema claro
+│   ├── pomo-black.webp     # Captura de pantalla tema oscuro
 │   ├── postura.png         # Icono de la aplicación
 │   └── sounds/
 │       └── ding.mp3        # Sonido de notificación
@@ -127,10 +127,6 @@ posture-helper-astro/
 3. **Commit** tus cambios (`git commit -m 'Add some AmazingFeature'`)
 4. **Push** a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un **Pull Request**
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
 ## 👨‍💻 Autor
 
