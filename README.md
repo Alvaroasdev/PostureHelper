@@ -1,74 +1,145 @@
-# Posture Helper Astro Project
+# Posture Helper 🌟
 
-A minimal posture reminder app built with Astro, JavaScript, and CSS.
+Una aplicación minimalista de recordatorios de postura construida con **Astro**, **JavaScript** y **CSS**. Diseñada para ayudarte a mantener una mejor postura durante tus sesiones de trabajo.
 
-## Overview
+![Posture Helper - Light Theme](public/pomo-white.png)
+![Posture Helper - Dark Theme](public/pomo-black.png)
 
-This project is a simple web application designed to help users maintain better posture through timed reminders. The application features a timer that allows users to set focus sessions, quick breaks, and deep work periods.
+## ✨ Características
 
-## Project Structure
+### 🎯 **Funcionalidades Principales**
+- **⏱️ Timer Inteligente**: Múltiples modos de sesión (Enfoque 20m, Rápido 5m, Profundo 45m)
+- **📊 Seguimiento de Sesiones**: Estadísticas detalladas de tus sesiones completadas
+- **🔔 Notificaciones**: Recordatorios visuales y auditivos para corregir tu postura
+- **📝 Historial de Enfoque**: Registro de actividades en las que te enfocaste
+- **💾 Persistencia**: Los datos se mantienen al refrescar la página
 
-```
-posture-helper-astro
-├── public
-│   └── postura.png
-├── src
-│   ├── components
-│   ├── layouts
-│   ├── pages
-│   │   └── index.astro
-│   ├── scripts
-│   │   └── timer.js
-│   └── styles
-│       └── main.css
-├── astro.config.mjs
-├── package.json
-└── README.md
-```
+### 🌍 **Internacionalización**
+- **🌐 Cambio de Idioma**: Inglés y Español con un clic
+- **💾 Preferencias Guardadas**: Tu idioma preferido se recuerda automáticamente
 
-## Installation
+### 🎨 **Temas Visuales**
+- **☀️ Tema Claro**: Diseño limpio y minimalista
+- **🌙 Tema Oscuro**: Perfecto para usar por la noche
+- **🔄 Cambio Dinámico**: Transiciones suaves entre temas
 
-1. Clone the repository:
+### 📱 **Diseño Responsive**
+- **🖥️ Desktop**: Interfaz completa con sidebar
+- **📱 Móvil**: Diseño optimizado para dispositivos táctiles
+- **📟 Tablet**: Adaptación perfecta para pantallas medianas
 
-   ```
+## 🚀 Instalación
+
+1. **Clona el repositorio:**
+   ```bash
    git clone <repository-url>
-   ```
-
-2. Navigate to the project directory:
-
-   ```
    cd posture-helper-astro
    ```
 
-3. Install the dependencies:
-   ```
+2. **Instala las dependencias:**
+   ```bash
    npm install
    ```
 
-## Usage
+3. **Inicia el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
 
-To start the development server, run:
+4. **Abre tu navegador en:**
+   ```
+   http://localhost:3000
+   ```
+
+## 🎮 Cómo Usar
+
+### ⏱️ **Configurar el Timer**
+1. Selecciona el modo de sesión:
+   - **Enfoque (20m)**: Para trabajo concentrado
+   - **Rápido (5m)**: Para pausas breves
+   - **Profundo (45m)**: Para sesiones largas
+
+2. Haz clic en **"Iniciar"** para comenzar el timer
+
+3. El círculo de progreso te mostrará el tiempo restante
+
+### 📝 **Registrar tu Enfoque**
+- Escribe en qué estás trabajando en el campo "Enfoque actual"
+- Presiona **Enter** para guardarlo en tu historial
+- Revisa tu progreso en la sección de estadísticas
+
+### 🎨 **Personalizar la Experiencia**
+- **Cambiar idioma**: Haz clic en el botón EN/ES en la esquina superior
+- **Cambiar tema**: Haz clic en el botón ☀️/🌙 para alternar entre claro y oscuro
+
+## 🛠️ Tecnologías
+
+- **⚡ Astro**: Framework web para sitios estáticos
+- **🎨 CSS**: Estilos personalizados con diseño responsive
+- **⚙️ JavaScript**: Funcionalidad interactiva del timer
+- **💾 LocalStorage**: Persistencia de datos del usuario
+- **🔊 Web Audio API**: Notificaciones de audio
+
+## 📁 Estructura del Proyecto
 
 ```
-npm run dev
+posture-helper-astro/
+├── public/
+│   ├── pomo-white.png      # Captura de pantalla tema claro
+│   ├── pomo-black.png      # Captura de pantalla tema oscuro
+│   ├── postura.png         # Icono de la aplicación
+│   └── sounds/
+│       └── ding.mp3        # Sonido de notificación
+├── src/
+│   ├── pages/
+│   │   └── index.astro     # Página principal
+│   ├── scripts/
+│   │   └── timer.js        # Lógica del timer y funcionalidades
+│   └── styles/
+│       └── main.css        # Estilos y temas
+├── astro.config.mjs        # Configuración de Astro
+└── package.json
 ```
 
-Open your browser and go to `http://localhost:3000` to view the application.
+## 🎯 Características Técnicas
 
-## Features
+### 💾 **Sistema de Persistencia**
+- **localStorage**: Guarda sesiones, historial y preferencias
+- **sessionStorage**: Distingue entre refresh y nueva sesión
+- **Auto-limpieza**: Los datos se resetean cada 24 horas
 
-## Features
+### 🌐 **Internacionalización**
+- **Sistema de traducciones**: Anidado y escalable
+- **Fallback automático**: Al inglés si falta traducción
+- **Persistencia de idioma**: Se recuerda tu preferencia
 
-- **Timer Functionality**: Start, pause, and reset the timer for different session types.
-- **Session Tracking**: Track the number of completed sessions for Focus, Quick, and Deep work modes.
-- **Notifications**: Visual and audio reminders to correct posture at the end of each session.
-- **Focus History**: Log of activities the user focused on during each session.
-- **Persistent Notification**: Notifications remain visible until the user closes them manually.
+### 🎨 **Sistema de Temas**
+- **CSS Variables**: Colores dinámicos
+- **Transiciones suaves**: Cambios elegantes entre temas
+- **Colores adaptativos**: Ring del timer se adapta al tema
 
-## Contributing
+## 🤝 Contribuir
 
-Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
+¡Las contribuciones son bienvenidas! 
 
-## License
+1. **Fork** el proyecto
+2. Crea una **rama** para tu feature (`git checkout -b feature/AmazingFeature`)
+3. **Commit** tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un **Pull Request**
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 👨‍💻 Autor
+
+**Alvaroasdev** - Desarrollador Full Stack
+
+- 🌐 [Portfolio](https://alvaroasdev.com)
+- 📧 [Email](mailto:contact@alvaroasdev.com)
+- 🐦 [Twitter](https://twitter.com/alvaroasdev)
+
+---
+
+⭐ **¡Si te gusta este proyecto, dale una estrella!**
